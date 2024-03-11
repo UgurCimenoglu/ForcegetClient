@@ -1,0 +1,65 @@
+<h3 class="title-center">Offers</h3>
+<button mat-raised-button (click)="addData()" mat-button color="primary" style="float: right;">
+  Add data
+</button>
+<table mat-table [dataSource]="dataSource">
+  <!-- Kolonlar için tanımlamalar -->
+  <ng-container matColumnDef="mode">
+    <th mat-header-cell *matHeaderCellDef>Mode</th>
+    <td mat-cell *matCellDef="let element">{{ element.mode?.name }}</td>
+  </ng-container>
+  <ng-container matColumnDef="movementType">
+    <th mat-header-cell *matHeaderCellDef>MovementType</th>
+    <td mat-cell *matCellDef="let element">
+      {{ element.movementType?.name }}
+    </td>
+  </ng-container>
+  <ng-container matColumnDef="incoterm">
+    <th mat-header-cell *matHeaderCellDef>Incoterms</th>
+    <td mat-cell *matCellDef="let element">{{ element.incoterm?.name }}</td>
+  </ng-container>
+  <ng-container matColumnDef="country">
+    <th mat-header-cell *matHeaderCellDef>Country</th>
+    <td mat-cell *matCellDef="let element">{{ element.city?.country?.name }}</td>
+  </ng-container>
+  <ng-container matColumnDef="city">
+    <th mat-header-cell *matHeaderCellDef>City</th>
+    <td mat-cell *matCellDef="let element">{{ element.city?.name }}</td>
+  </ng-container>
+  <ng-container matColumnDef="packageType">
+    <th mat-header-cell *matHeaderCellDef>PackageType</th>
+    <td mat-cell *matCellDef="let element">
+      {{ element.packageType?.name }}
+    </td>
+  </ng-container>
+  <ng-container matColumnDef="unit1Value">
+    <th mat-header-cell *matHeaderCellDef>Unit1Value</th>
+    <td mat-cell *matCellDef="let element">{{ element.unit1Value }}</td>
+  </ng-container>
+  <ng-container matColumnDef="unit1">
+    <th mat-header-cell *matHeaderCellDef>Unit1</th>
+    <td mat-cell *matCellDef="let element">{{ element.unit1?.name }}</td>
+  </ng-container>
+  <ng-container matColumnDef="unit2Value">
+    <th mat-header-cell *matHeaderCellDef>Unit2Value</th>
+    <td mat-cell *matCellDef="let element">{{ element.unit2Value }}</td>
+  </ng-container>
+  <ng-container matColumnDef="unit2">
+    <th mat-header-cell *matHeaderCellDef>Unit2</th>
+    <td mat-cell *matCellDef="let element">{{ element.unit2?.name }}</td>
+  </ng-container>
+  <ng-container matColumnDef="price">
+    <th mat-header-cell *matHeaderCellDef>Price</th>
+    <td mat-cell *matCellDef="let element">{{ element.price }}</td>
+  </ng-container>
+  <ng-container matColumnDef="currency">
+    <th mat-header-cell *matHeaderCellDef>Currency</th>
+    <td mat-cell *matCellDef="let element">{{ element.currency?.name }}</td>
+  </ng-container>
+
+  <!-- Diğer kolonlar için benzer tanımlamalar -->
+
+  <!-- Tablonun geri kalanı -->
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+</table>

@@ -1,0 +1,16 @@
+.container {
+  max-width: 400px;
+  margin: 20px auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+  
+  mat-form-field {
+    width: 100%;
+    margin-bottom: 20px;
+  }
